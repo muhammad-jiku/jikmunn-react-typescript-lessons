@@ -1,20 +1,32 @@
-import React from 'react';
+//  built-in types: string, number, void, boolean, null
+//  user defined types: object, array, enum, union, any, custom type
 
-//  string, number, void, boolean, null
-type UserProps = {
-  name: string;
-  email: string;
-  age: number;
-  isRegistered: boolean;
+type UserDataType = {
+  //  object type
+  user: {
+    name: string;
+    email: string;
+    age: number;
+    isRegistered: boolean;
+    lang: string[];
+  };
 };
 
-const User = (props: UserProps) => {
+const User = ({ user }: UserDataType) => {
   return (
     <div style={{ border: '1px solid', margin: '1rem' }}>
-      <h2>{props.name}</h2>
-      <p>{props.email}</p>
-      <p>{props.age} years old</p>
-      {props.isRegistered ? <p>Junior Salesman</p> : <p>Senior Salesman</p>}
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
+      <p>{user.age} years old</p>
+      <p>
+        {user.lang.map((language, idx) => (
+          <span key={idx}>
+            {language}
+            {', '}
+          </span>
+        ))}
+      </p>
+      {user.isRegistered ? <p>Junior Salesman</p> : <p>Senior Salesman</p>}
     </div>
   );
 };
