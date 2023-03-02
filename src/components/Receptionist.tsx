@@ -1,5 +1,7 @@
 //  user defined types: object, array, enum, union, any, custom type
 
+import Card from './Card';
+
 type ReceptionistsDataType = {
   //  array type
   receptionists: {
@@ -15,7 +17,7 @@ const Receptionist = ({ receptionists }: ReceptionistsDataType) => {
   return (
     <div>
       {receptionists.map((receptionist, idx) => (
-        <div style={{ border: '1px solid pink', margin: '1rem' }} key={idx}>
+        <Card key={idx}>
           <h2>{receptionist.name}</h2>
           <p>{receptionist.email}</p>
           <p>{receptionist.age} years old</p>
@@ -32,7 +34,7 @@ const Receptionist = ({ receptionists }: ReceptionistsDataType) => {
           ) : (
             <p>Senior Receptionist</p>
           )}
-        </div>
+        </Card>
       ))}
     </div>
   );

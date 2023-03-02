@@ -39,8 +39,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>User Management</h1>
-      <Message text="UPDATE" />
+      <h1>Children Props</h1>
+      {/*   <Message text="UPDATE" />*/}
       <User user={salesMan1} />
       <User user={salesMan2} />
       <Receptionist receptionists={receptionists} />
